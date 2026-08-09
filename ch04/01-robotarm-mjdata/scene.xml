@@ -1,0 +1,52 @@
+<mujoco model="2dof_robot">
+  <!-- 각도 단위를 degree로 사용하는 설정 -->
+  <compiler angle="degree"/>
+  <!-- 중력·시뮬레이션 시간 간격 설정 -->
+  <option gravity="0 0 -9.81" timestep="0.005"/>
+
+  <!-- 재질(material)·배경 정의 블록 -->
+  <asset>
+    <!-- 배경: light gray (skybox) -->
+    <texture type="skybox" builtin="gradient"
+             rgb1="0.75 0.75 0.75" rgb2="0.75 0.75 0.75"
+             width="256" height="256"/>
+
+    <material name="dark" rgba="0.2 0.2 0.2 0.5"/>
+    <material name="gray" rgba="0.8 0.8 0.8 1"/>
+    <material name="silver" rgba="0.9 0.9 0.9 1"/>
+    <material name="mint" rgba="0.5 0.92 0.85 1"/>
+    <material name="pink" rgba="1.0 0.6 0.8 1"/>
+  </asset>
+
+  <!-- 실제 월드에 배치되는 물체 정의 -->
+  <worldbody>
+    <light pos="0 0 2" dir="0 0 -1" directional="true"/>
+    <geom type="plane" size="2 2 0.1" material="silver"/>
+
+    <body name="base" pos="0 0 0.05">
+      <geom type="cylinder" size="0.1 0.05" material="dark" contype="0" conaffinity="0"/>
+
+      <body name="link1" pos="0 0 0.05">
+        <joint name="joint1" type="hinge" axis="0 -1 0" range="-45 45" damping="10"/>
+        <geom type="cylinder" size="0.06 0.06" euler="90 0 0" material="mint"/>
+        <geom type="cylinder" size="0.04 0.2" pos="0 0 0.2" material="gray"/>
+
+        <body name="link2" pos="0 0 0.4">
+          <joint name="joint2" type="hinge" axis="0 -1 0" range="-45 45" damping="10"/>
+          <geom type="cylinder" size="0.05 0.05" euler="90 0 0" material="mint"/>
+          <geom type="cylinder" size="0.03 0.15" pos="0 0 0.15" material="gray"/>
+
+          <body name="end_effector" pos="0 0 0.3">
+            <geom type="sphere" size="0.06" material="pink"/>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+
+  <!-- joint2를 5도 기울여서 시작 → 중력 토크 발생 -->
+  <keyframe>
+    <key name="init" qpos="0 0.0873" qvel="0 0"/>
+  </keyframe>
+
+</mujoco>

@@ -1,0 +1,45 @@
+# uv / Python
+.venv/
+.uv_cache/
+uv.lock.bak
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+# 르랩은 빌드된 프론트엔드를 함께 배포 (10장 uv tool install 설치용)
+!lelab/frontend/dist/
+downloads/
+eggs/
+*.egg-info/
+*.egg
+
+# uv 사용 시 참고: uv.lock 은 보통 커밋하여 재현성 유지
+# Ruff / 테스트 / 타입 체크 캐시
+.ruff_cache/
+.mypy_cache/
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+*.py,cover
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Codex local files
+.codex
+.claude/
+
+# Env / local
+.env
+.env.local
+*.local

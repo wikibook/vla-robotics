@@ -1,0 +1,7 @@
+# eval.py 실행 시 매번 덮어써지는 산출물
+eval_results.json
+images/success_rate.png
+images/step_comparison.png
+
+# HF 캐시
+.cache/

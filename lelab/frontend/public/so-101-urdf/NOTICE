@@ -1,0 +1,17 @@
+SO-ARM101 ROS2 URDF package assets
+
+This directory contains SO-ARM101 URDF/XML/STL assets and a ROS2 package wrapper.
+
+Original robot asset source:
+https://github.com/TheRobotStudio/SO-ARM100/tree/main/Simulation/SO101
+
+Original robot asset repository license: Apache-2.0
+
+ROS2 package wrapper source:
+https://github.com/MuammerBay/SO-ARM_ROS2_URDF
+
+The wrapper package metadata declares license "BSD" in package.xml, but the
+source repository did not include a full BSD license text when this notice was
+added. The package.xml metadata is retained for traceability.
+
+Keep this notice with the assets when redistributing them.

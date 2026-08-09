@@ -1,0 +1,37 @@
+# uv / Python
+.venv/
+.uv_cache/
+uv.lock.bak
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+*.egg-info/
+*.egg
+
+# uv 사용 시 참고: uv.lock 은 보통 커밋하여 재현성 유지
+# Ruff / 테스트 / 타입 체크 캐시
+.ruff_cache/
+.mypy_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Env / local
+.env
+.env.local
+*.local

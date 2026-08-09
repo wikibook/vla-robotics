@@ -1,0 +1,48 @@
+[project]
+name = "ch07-01-train-smolvla"
+version = "0.1.0"
+description = "SmolVLA 파인튜닝 예제 (ch07)"
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.12"
+dependencies = [
+    "huggingface-hub>=1.23.0",
+    "lerobot[smolvla,dataset]>=0.6.0",
+    "numpy>=2.2.6,<2.3.0",
+    "torch>=2.11.0,<2.12.0",
+    "torchvision>=0.26.0,<0.27.0",
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu126"
+url = "https://download.pytorch.org/whl/cu126"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu126" }
+torchvision = { index = "pytorch-cu126" }
+
+[dependency-groups]
+dev = [
+    "ruff>=0.8.0",
+    "pytest>=8.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+markers = [
+    "mujoco: requires MuJoCo runtime (EGL or OS default)",
+    "slow: episode-length integration",
+    "network: requires HF Hub access",
+]
+[tool.ruff]
+target-version = "py312"
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP"]
+ignore = ["E501"]
+
+[tool.ruff.format]
+quote-style = "double"

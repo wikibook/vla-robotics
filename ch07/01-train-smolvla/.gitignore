@@ -1,0 +1,9 @@
+# Training checkpoints (model weights, large)
+checkpoints/
+
+# Local caches
+.cache/
+
+# train.py 실행 산출물
+train.log
+images/loss_curve.png

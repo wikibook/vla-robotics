@@ -1,0 +1,12 @@
+SO-ARM101 assets
+
+This directory contains SO-ARM101 MuJoCo XML and STL mesh assets.
+
+Original source:
+https://github.com/TheRobotStudio/SO-ARM100/tree/main/Simulation/SO101
+
+Original repository license: Apache-2.0
+
+Some files were generated with onshape-to-robot from the Onshape document
+recorded in the XML file comments. Keep this notice with the assets when
+redistributing them.

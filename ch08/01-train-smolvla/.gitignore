@@ -1,0 +1,5 @@
+# Training checkpoints (model weights, large)
+checkpoints/
+
+# Local caches
+.cache/

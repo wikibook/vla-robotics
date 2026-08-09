@@ -1,0 +1,7 @@
+# Local LeRobot datasets (augment_dataset.py output)
+datasets/
+# 학습 체크포인트
+checkpoints/
+
+# HF 캐시
+.cache/

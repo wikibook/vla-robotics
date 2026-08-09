@@ -1,0 +1,5 @@
+# infer.py 실행 로그
+infer.log
+
+# HF 캐시
+.cache/

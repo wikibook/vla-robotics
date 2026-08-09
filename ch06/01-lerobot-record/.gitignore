@@ -1,0 +1,8 @@
+# Local LeRobot datasets (created when recording)
+datasets/local/
+
+# Capture outputs (videos, snapshots)
+captures/
+
+# Local caches
+.cache/

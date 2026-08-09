@@ -1,0 +1,5 @@
+# main.py 실행 시 생성되는 스냅샷·GIF
+snapshots/
+
+# HF 캐시
+.cache/

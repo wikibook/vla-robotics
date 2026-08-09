@@ -1,0 +1,13 @@
+# 학습 체크포인트
+checkpoints/
+
+# train.py / eval.py / compare.py 실행 산출물
+train_20k.log
+eval.log
+eval.json
+compare.md
+screenshot.png
+images/
+
+# HF 캐시
+.cache/

@@ -1,0 +1,63 @@
+Vendor Source
+=============
+
+This directory is a vendor copy of the Hugging Face LeLab repository.
+
+Source repository: https://github.com/huggingface/leLab
+Imported commit: 840a970bd48e91ff5787f8748f6d0a5042e00dc0
+Imported commit date: 2026-06-16T14:06:37+02:00
+Imported commit subject: fix(update): use 'uv tool install --force' for uv-tool installs
+
+The upstream Git metadata was removed after cloning, so this directory is
+stored as regular source files in the parent repository.
+
+To restore the original upstream state, clone the source repository and check
+out the imported commit:
+
+    git clone https://github.com/huggingface/leLab.git
+    cd leLab
+    git checkout 840a970bd48e91ff5787f8748f6d0a5042e00dc0
+
+
+Modifications
+=============
+
+THIS VENDOR COPY HAS BEEN MODIFIED. It is not identical to the upstream commit
+named above. This notice is provided under Apache License 2.0 section 4(b),
+which requires modified files to carry prominent notices stating that they were
+changed.
+
+Aggregate change against the imported commit: 87 files changed, 6256
+insertions(+), 2284 deletions(-). Diff the directory against a clean checkout of
+840a970bd48e91ff5787f8748f6d0a5042e00dc0 for the exact per-file changes.
+
+Changes by area:
+
+1. Frontend light theme (77 modified files under `frontend/src/`)
+   The default frontend theme was switched from dark to light. Most of the
+   modified `.tsx` files contain only Tailwind color class replacements, which
+   is why their insertion and deletion counts match.
+
+2. SmolVLA fine-tuning from a pretrained base
+   `lelab/train.py`, `lelab/jobs.py` and `tests/test_train.py` were changed so
+   training starts from the SmolVLA pretrained base instead of the upstream
+   default. This is the behaviour the accompanying book chapters describe.
+
+3. Dependency pinning
+   `pyproject.toml` pins LeRobot to commit
+   82dffde7fad11cba91f7916b050fbe7d7eea35ab and adds the `smolvla` extra.
+   `uv.lock` was generated for that resolution and is not present upstream.
+   Frontend npm dependency versions in `frontend/package.json` were raised.
+
+4. Files removed from the vendor copy (8 files)
+   `.github/dependabot.yml`, `.github/workflows/` (5 workflow files),
+   `.pre-commit-config.yaml`, and `CLAUDE.md`. These drive upstream's own CI and
+   contributor tooling and have no effect inside this repository.
+
+5. Asset and notice files added
+   `frontend/public/so-101-urdf/NOTICE` records the origin and license of the
+   SO-ARM101 URDF and STL assets. STL meshes were exempted from Git LFS
+   tracking so that a plain clone yields usable mesh files.
+
+None of the above changes are endorsed by or attributable to the upstream
+LeLab authors. Report issues with this copy to this repository, not upstream.

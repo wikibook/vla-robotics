@@ -1,0 +1,26 @@
+<mujoco>
+  <option gravity="0 0 -9.81"/>
+
+  <asset>
+    <!-- 배경: light gray (skybox) -->
+    <texture type="skybox" builtin="gradient"
+             rgb1="0.7 0.7 0.7"
+             rgb2="0.7 0.7 0.7"
+             width="256" height="256"/>
+
+    <!-- 재질: 바닥은 연한 회색, 공은 구분 잘 되는 민트 -->
+    <material name="mint" rgba="0.5 0.92 0.85 1"/>
+    <material name="floor_light" rgba="0.88 0.88 0.88 1"/>
+  </asset>
+
+  <worldbody>
+    <!-- 바닥 -->
+    <geom type="plane" size="5 5 0.1" material="floor_light"/>
+
+    <!-- 떨어지는 공: freejoint로 중력에 낙하, material=mint -->
+    <body pos="0 0 5">
+      <freejoint/>
+      <geom type="sphere" size="0.1" material="mint"/>
+    </body>
+  </worldbody>
+</mujoco>
