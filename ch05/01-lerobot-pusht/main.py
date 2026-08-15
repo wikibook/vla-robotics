@@ -25,7 +25,7 @@ SNAP_DIR = Path(__file__).resolve().parent / "snapshots"
 def build_processors(policy, dataset, device):
     """학습 통계 기반 전·후처리기 생성.
 
-    preprocessor: 관측을 정규화하고, 이미지를 CHW 형식으로 변환하며, batch 차원 추가
+    preprocessor: 관측을 데이터셋 통계로 정규화하고 정책 실행 장치로 이동
     postprocessor: 정책 출력(정규화된 action)을 환경이 받는 실제 좌표계 스케일로 복원
     """
     overrides = {"device_processor": {"device": str(device)}}
