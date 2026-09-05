@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "2축 로봇 역운동학(IK) 좌표 기반 이동 (ch04)"
 readme = "README.md"
 license = "Apache-2.0"
-requires-python = ">=3.12"
+requires-python = ">=3.12,<3.13"
 dependencies = [
     "mujoco>=3.10.0",
 ]
